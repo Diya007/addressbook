@@ -181,6 +181,7 @@ class Edit extends React.Component {
 		e.preventDefault();
 		let id=this.props.id;
 		this.props.selectedInfo(this.state.editingContact, id)
+		this.props.onRequestClose();
 		
 	}
 	_delete() {
