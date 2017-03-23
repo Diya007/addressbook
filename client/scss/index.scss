@@ -1,0 +1,106 @@
+body {
+    background-color: #eee;
+    color: #444444;
+    line-height: 140%;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+.app {
+    text-align: center;
+}
+
+
+.people-list {
+    display: block;
+    width: 500px;
+    padding: 30px;
+    position: relative;
+    border: 20px solid #f8f8f8;
+    background: white;
+    box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 1);
+}
+.list {
+    display: block;
+    width: 500px;
+    padding: 30px;
+    position: relative;
+    border: 20px solid #f8f8f8;
+    background: white;
+    box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 1);
+    list-style: none;
+    margin: 0 auto;
+
+}
+
+
+input.textarea {
+    display: block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    height: 45px;
+    padding: 8px 10px;
+    outline: none;
+    border: 2px solid #e5e5e5;
+    border-radius: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+li.person {
+    outline: solid;
+    text-align: left;
+    margin: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+.add-form {
+    display: block;
+    margin: 30px auto;
+    background-color: #fff;
+}
+
+.frame {
+    display: block;
+    width: 500px;
+    padding: 30px;
+    position: relative;
+    border: 20px solid #f8f8f8;
+    background: white;
+    box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 1);
+    margin: 0 auto;
+}
+
+.frame label {
+    font-size: 12px;
+    margin-top: 10px;
+    position: relative;
+}
+.form-feild {
+    margin-bottom: 15px;
+}
+.button {
+    width: 30%;
+    display: table-cell;
+    background: #7adcef;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 45px;
+    padding: 8px 10px;
+    outline: none;
+    border: 2px solid #e5e5e5;
+    border-radius: 0;
+}
+
+.edit {
+    display: block;
+    margin: 30px auto;
+    background-color: #fff;
+    margin: auto;
+}
