@@ -30,7 +30,7 @@ class List extends React.Component {
 				<ul className="list" >
 					<FaPlusCircle className="pointer" />
 					<header>
-						<h2> Team memebers </h2>
+						<h2> Team members </h2>
 						
 					</header>
 					{this.props.people.map((person) => {
@@ -126,7 +126,7 @@ class Add extends React.Component {
 		
 					<FaTimesCircle className="pointer"  />
 					<header>
-						<h2> Add a team memeber </h2>
+						<h2> Add a team member </h2>
 						<p>Set email. location and role</p>
 					</header>
 
@@ -210,7 +210,7 @@ class Edit extends React.Component {
 				<form className="frame" onSubmit={this._edit.bind(this)} >
 					<FaTimesCircle className="pointer"  onClick={this._show.bind(this)}/>
 					<header>
-						<h2> Edit team memeber </h2>
+						<h2> Edit team member </h2>
 						<p> Edit contact info, location and role.</p>
 					</header>
 					<div>
