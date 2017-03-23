@@ -8,14 +8,26 @@ import MdEdit from 'react-icons/lib/md/edit';
 
 
 class App extends React.Component {
+	constructor() {
+    	super();
+    	this.state = {
+    		show: false
+    	};
+      
+    }
+     _showAdd() {
+    	this.setState({show:true})
+    	console.log(this.state)
+    }
 	render() {
 		return (
 			<div className="app">
 				<h1> Address book</h1>
-			
+				<FaPlusCircle className="pointer" onClick={this._showAdd.bind(this)} />
+				<hr />
 				<List people={this.props.people} selectedInfo={this.props.selectedInfo} deleteInfo={this.props.deleteInfo} />
 				
-				<Add addInfo={this.props.addInfo}/>
+				{this.state.show ? <Add onRequestClose={()=>{this.setState({show: false})}} addInfo={this.props.addInfo}/> : null}
 			</div>
 		)
 	}
@@ -28,7 +40,6 @@ class List extends React.Component {
 			<div className="people-list">
 	
 				<ul className="list" >
-					<FaPlusCircle className="pointer" />
 					<header>
 						<h2> Team members </h2>
 						
@@ -116,6 +127,10 @@ class Add extends React.Component {
 		console.log(this.state)
 
 	}
+	
+	_hide() {
+		this.props.onRequestClose();
+	}
 
 	render() {
 		return (		
@@ -123,7 +138,7 @@ class Add extends React.Component {
 				
 				<form className="frame" onSubmit={this._addNew.bind(this)}>
 		
-					<FaTimesCircle className="pointer"  />
+					<FaTimesCircle className="pointer" onClick={this._hide.bind(this)} />
 					<header>
 						<h2> Add a team member </h2>
 						<p>Set email. location and role</p>
