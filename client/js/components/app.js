@@ -12,9 +12,9 @@ class App extends React.Component {
 		return (
 			<div className="app">
 				<h1> Address book</h1>
-				<hr />
+			
 				<List people={this.props.people} selectedInfo={this.props.selectedInfo} deleteInfo={this.props.deleteInfo} />
-				<hr />
+				
 				<Add addInfo={this.props.addInfo}/>
 			</div>
 		)
@@ -31,7 +31,7 @@ class List extends React.Component {
 					<FaPlusCircle className="pointer" />
 					<header>
 						<h2> Team memebers </h2>
-						<p> You have 3 team memebers </p>
+						
 					</header>
 					{this.props.people.map((person) => {
 						return <Person person={person} key={person.id} selectedInfo={this.props.selectedInfo} deleteInfo={this.props.deleteInfo} />
@@ -61,13 +61,14 @@ class Person extends React.Component {
 	render() {	
 		return (
 			<div>
-				<li  className="person" onClick={this._callEdit.bind(this)}>
+				<li className="person" onClick={this._callEdit.bind(this)}>
 					<MdAccountCircle /> &nbsp;
 					{this.props.person.firstName} &nbsp;
 	          		{this.props.person.lastName} <br />
 	          		{this.props.person.email} <br />
 	          		{this.props.person.phone} <br />
 	          		{this.props.person.regular === 'on' ? "Regular member" : "Admin"}
+	          		<hr />
 				</li>
 
 				{this.state.show ? <Edit selectedInfo={this.props.selectedInfo} deleteInfo={this.props.deleteInfo} id={this.props.person.id} /> : null }
