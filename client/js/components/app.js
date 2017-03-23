@@ -115,6 +115,8 @@ class Add extends React.Component {
 			admin: ""
 
 		})
+		
+		this.props.onRequestClose();
 
 	}
 
