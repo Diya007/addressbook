@@ -70,8 +70,7 @@ class Person extends React.Component {
 	          		{this.props.person.regular === 'on' ? "Regular member" : "Admin"}
 	          		<hr />
 				</li>
-
-				{this.state.show ? <Edit selectedInfo={this.props.selectedInfo} deleteInfo={this.props.deleteInfo} id={this.props.person.id} /> : null }
+				{this.state.show ? <Edit  onRequestClose={()=>{this.setState({show: false})}} selectedInfo={this.props.selectedInfo} deleteInfo={this.props.deleteInfo} id={this.props.person.id} /> : null }
 
 			</div>
 		)
@@ -167,7 +166,6 @@ class Edit extends React.Component {
 	constructor() {
     	super();
     	this.state = {
-    		show: true,
     		editingContact: {
     			firstName:"",
 				lastName:"",
@@ -198,17 +196,16 @@ class Edit extends React.Component {
 		this.setState(editingContact);
 		console.log(this.state.editingContact)
 	}
-	_show (){	
-		this.setState({show: false});
-		console.log(this.state)
+	_hide (){	
+		this.props.onRequestClose();
 	}
 	render() {
 		return (
 			
 			<div className="edit" >
-				{this.state.show ?
+
 				<form className="frame" onSubmit={this._edit.bind(this)} >
-					<FaTimesCircle className="pointer"  onClick={this._show.bind(this)}/>
+					<FaTimesCircle className="pointer"  onClick={this._hide.bind(this)}/>
 					<header>
 						<h2> Edit team member </h2>
 						<p> Edit contact info, location and role.</p>
@@ -242,7 +239,6 @@ class Edit extends React.Component {
 					<input className="button" type="button" value="Delete" onClick={this._delete.bind(this)} />
 
 				</form>
-				: null}
 
 			</div>
 			
